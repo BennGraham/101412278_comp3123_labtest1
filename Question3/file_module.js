@@ -4,7 +4,7 @@ const delete_or_create_logs = () => {
   const logs_directory = "./Logs";
 
   if (fs.existsSync(logs_directory)) {
-    console.log(`${logs_directory} found. Processing log files...`);
+    console.log(`${logs_directory} found. Deleting log files...`);
 
     fs.readdirSync(logs_directory).forEach((file) => {
       fs.unlinkSync(`${logs_directory}/${file}`);
@@ -15,7 +15,7 @@ const delete_or_create_logs = () => {
     console.log(`${logs_directory} deleted.`);
   } else {
     console.log(
-      `${logs_directory} not found, creating it and adding log files.`
+      `${logs_directory} not found. Creating ${logs_directory} and adding log files.`
     );
     fs.mkdirSync(logs_directory);
 
