@@ -1,7 +1,7 @@
 const resolvedPromise = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve({ message: "delayed success" });
+      resolve({ message: "delayed success!" });
     }, 500);
   });
 };
@@ -9,7 +9,7 @@ const resolvedPromise = () => {
 const rejectedPromise = () => {
   return new Promise((_, reject) => {
     setTimeout(() => {
-      reject(new Error("error: delayed exception"));
+      reject(new Error("error: delayed exception!"));
     }, 500);
   });
 };
@@ -19,7 +19,7 @@ resolvedPromise()
     console.log(result);
   })
   .catch((e) => {
-    console.log(e);
+    console.error(e);
   });
 
 rejectedPromise()
@@ -27,5 +27,5 @@ rejectedPromise()
     console.log(result);
   })
   .catch((e) => {
-    console.log(e);
+    console.error(e);
   });
